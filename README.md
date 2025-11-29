@@ -50,7 +50,8 @@ $ top
 ```
 > **👇 [실습 스크린샷]**
 >
-> <img width="804" height="230" alt="image" src="https://github.com/user-attachments/assets/00749b5a-76e3-40fa-b091-4f72555ac842" />
+> <img width="796" height="227" alt="image" src="https://github.com/user-attachments/assets/0d0597d8-6538-4bba-a68e-4c2d6cecf37c" />
+
 
 
 ### 🔍 화면 상세 분석 (Screen Analysis)
