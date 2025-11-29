@@ -137,23 +137,36 @@ $ top
 | `-u` | **U**ser | 프로세스 소유자 이름, 시작 시간 등 표시 |
 | `-x` | No TTY | 터미널에 종속되지 않은 데몬 프로세스 표시 |
 
-### 🚀 추천 명령어 조합
-시스템 관리자들이 가장 애용한다고 알려진 두 가지 명령어 조합
+### 💻 실행 결과 및 컬럼 분석 (`ps -aux` 기준)
 
-**1. System V 스타일 (가장 보편적)**
-```bash
-$ ps -ef
-```
+<img width="763" height="77" alt="image" src="https://github.com/user-attachments/assets/ea28aa66-d3cf-4010-8d64-08954ea785d7" />
 
-**2. BSD 스타일 (상세 정보 확인용)**
-```bash
-$ ps -aux
-```
-```text
-USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root         1  0.0  0.1 168456 12544 ?        Ss   Nov20   0:05 /sbin/init
-user      1234  0.5  2.1 543210 98765 pts/0    Sl+  10:00   0:12 ./my_program
-```
+
+#### 🔍 컬럼(Header) 상세 설명
+| 컬럼명 | 전체 이름 (Meaning) | 상세 설명 |
+| :--- | :--- | :--- |
+| **USER** | User Name | 프로세스를 실행시킨 사용자 계정 이름 |
+| **PID** | Process ID | 시스템에서 프로세스를 식별하는 고유 번호 |
+| **%CPU** | CPU Usage | 프로세스가 사용 중인 CPU 점유율 (백분율) |
+| **%MEM** | Memory Usage | 프로세스가 사용 중인 물리 메모리 점유율 (백분율) |
+| **VSZ** | Virtual Memory Size | 가상 메모리 사용량 (KB). 코드, 데이터, 라이브러리 등을 포함한 할당된 총 크기 |
+| **RSS** | Resident Set Size | 실제 물리 메모리(RAM) 사용량 (KB). 실제 메모리에 적재된 크기 |
+| **TTY** | Teletypewriter | 프로세스가 연결된 터미널 이름. (`?`는 데몬 등 터미널이 없는 경우) |
+| **STAT** | Status | 프로세스의 현재 상태 코드 (아래 표 참조) |
+| **START** | Start Time | 프로세스가 시작된 날짜 또는 시간 |
+| **TIME** | Total CPU Time | 프로세스가 시작된 후 사용한 총 CPU 시간 합계 |
+| **COMMAND** | Command line | 프로세스를 실행한 명령어 라인 (옵션 포함) |
+
+#### 📊 STAT 상태 코드 설명
+`STAT` 컬럼은 프로세스의 상태를 문자로 나타냅니다.
+- **`R`**: 실행 중 (Running) 또는 실행 대기
+- **`S`**: 인터럽트 가능한 수면 (Sleeping) - 이벤트 대기 중
+- **`D`**: 인터럽트 불가능한 수면 (Disk Sleep) - 보통 I/O 대기
+- **`Z`**: 좀비 (Zombie) - 종료되었으나 부모가 회수하지 않음
+- **`T`**: 정지됨 (Stopped)
+- **`+`**: 포그라운드(Foreground) 프로세스 그룹에 속함
+- **`l`**: 멀티 스레드 (Multi-threaded)
+- **`s`**: 세션 리더 (Session leader)
 
 ---
 
