@@ -9,7 +9,7 @@
 
 <br>
 
-> **오픈소스SW개론 과제 #2**
+> **오픈소스SW개론 과제 #2**<br>
 > 리눅스 시스템 관리의 핵심인 `top`, `ps`, `jobs`, `kill`의 사용 설명을 위한 README 작성
 
 </div>
@@ -50,7 +50,8 @@ $ top
 ```
 > **👇 [실습 스크린샷]**
 >
-> <img width="789" height="291" alt="image" src="[https://github.com/user-attachments/assets/de48b081-a0ee-4746-8f0b-1e794be34c78](https://github.com/user-attachments/assets/de48b081-a0ee-4746-8f0b-1e794be34c78)" />
+> <img width="804" height="230" alt="image" src="https://github.com/user-attachments/assets/00749b5a-76e3-40fa-b091-4f72555ac842" />
+
 
 ### 🔍 화면 상세 분석 (Screen Analysis)
 `top` 실행 화면은 크게 상단의 **요약 영역**과 하단의 **프로세스 영역**으로 나뉩니다.
